@@ -1,7 +1,7 @@
 import glob
 import os
 from dataclasses import dataclass
-from typing import List, Tuple
+from typing import List, Tuple, Union
 
 import cv2
 import numpy as np
@@ -12,9 +12,9 @@ from .utils import WrongDirectoryStructure
 
 @dataclass
 class HsiDatapoint:
-    hsi: Tuple[np.ndarray, str]
-    mask: Tuple[np.ndarray, str]
-    meta: Tuple[dict, str]
+    hsi: Union[np.ndarray, str]
+    mask: Union[np.ndarray, str]
+    meta: Union[dict, str]
 
 
 class HsiDataset:
